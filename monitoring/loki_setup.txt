@@ -1,0 +1,17 @@
+# Grafana Loki Setup Instructions
+
+1. Start Loki using Docker:
+   docker run -d --name=loki -p 3100:3100 grafana/loki:2.9.1
+
+2. To view logs from a container:
+   docker logs hello-devops
+
+3. Optional: Use Grafana to visualize logs:
+   - Install Grafana (Docker or locally)
+   - Add Loki as a data source (http://localhost:3100)
+   - Create a dashboard to view logs
+
+4. Forward Nomad job logs to Loki:
+   - Nomad writes logs to stdout
+   - Loki can scrape logs using promtail or Docker logging driver
+
